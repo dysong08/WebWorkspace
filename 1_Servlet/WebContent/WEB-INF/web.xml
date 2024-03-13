@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+
+<!-- 
+	* web.xml파일
+	- 배포서술자(DD, Deployment Descriptor)라고 해서 웹 애플리케이션의 기본적인 설정을 위해 작성하는 파일
+	- 현재 웹 애플리케이션을 구동시키는 서버를 start할 때 가장 먼저 읽혀지는 파일
+	- 개발자가 web.xml을 수정하지 않고도 개발 및 운영이 가능하지만 
+		규모가 커기조 다양한 Filter, Servlet, Wrpper등을 사용하게 되면 직접 수정을 해야하는 경우도 있다.
+ -->
+
+
+  <display-name>1_Servlet</display-name>
+  <welcome-file-list>
+  <!-- 
+  	* welcome-file : 처음에 url로 현재 어필리케이션의 루트경로(conextpath)로 요청시
+  					제일 먼저 보여지게 되는 메인페이지를 지정해 놓은 것
+  					=> 각자 본인 컴퓨터에 구축해놓은 서버로 요청을 보내기
+  					(현재서버 ip주소 : 127.0.0.1 = localhost)
+  					=> 서버 포트번호 : 8081로 설정
+  					-> 서버내의 구동중인 어플리케이션의 루트경로 context root : servlet
+  					=> 합치면 lacalhost:8081/servlet 으로 요청시 WebContent 바로 아래에 있는 index파일이 서비스된다.
+   -->
+  
+  
+  
+  
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>

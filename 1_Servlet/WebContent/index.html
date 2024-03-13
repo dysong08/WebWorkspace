@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- 
+	1) Workspace 만든 후 열기
+	2) Workspace 작업환경 셋팅
+		2_1) 웹 애플리케이션 서비스를 위해 java EE로 환경설정
+		2_2) 보여질 UI 패널 셋팅
+			(Project Explore, Navigator, Console, Problems, Server)
+		2_3) 인코딩 설정 : 모두 UTP-8 [Window - Preferences]
+			(General - Workspace)
+			(General - Editors - Text Editors - Spelling)
+			(Web - CSS, HTML, JSP Files)
+			(JSON - JSON Files) 
+		2_4) 서버 설정 : 이클립스에서 서버를 실행할 수 있도록 연동시키는 과정 [Window - Preferences]
+						(Server - Runtime Enviroments)
+						- add 후 설치한 아파티 톰캣과 동일한 버전 선택 후 NEXT
+						- NAME 수정 가능하나 기본값으로 설정 - browser 클릭 후 톰캣이 설치된 폴더 선택
+						- finish
+	3) 서버 생성하기
+		3_1) Navigator 우클릭 - NEW - SERVER
+		3_2) SERVER 선택시 2_4)에서 셋팅한 실행환경 선택 후 생성
+		3_3) 생성된 서버정보 수정 (만들어진 서버 더블클릭)
+		3_3_1) 포트번호 재설정 (현재 기본값으로 잡힌 8080포트와 오라클 기본포트가 동일하므로 충돌발생함)
+				-> 8080을 8081로 수정함
+		3_3_2) 왼쪽 하단 Server Options 체크박스에서 serve modules without publishing 체크
+				-> 다음 단계에서 지정할 output folder에서 제대로 컴파일된 파일들이 들어가게끔 하기 위한 설정
+		
+	4) Dynamic Web Project 생성
+		4_1) 프로젝트명 작성 후 NEXT
+		4_2) default output folder 경로 설정 : WebContent\WEB-INF\classes 설정 후 NEXT
+			-> output folder로 지정된 classes폴더에는 컴파일된 클래스 파일들이 담긴다.
+				실제로 배포시에도 WebContent안의 내용이 배포된다.(클래스 파일들도 WebContent내부에 존재해야 함)
+		4_3) Context root : 현재 어클리케이션만의 고유한 이름을 지어주기
+							하나의 서버로 여러개의 애플리케이션을 구동시킬 수 있음.
+							단, 각 어플리케이션의 고유한 이름으로 서로 다른 접근경로를 가지게 하여 구분을 짓는다.
+							+ Web.xml 자동생성해주는 체크박스 체크
+							
+	5) 만들어진 프로젝트 확인
+		5_1) classes폴더 잘 생성됐는지 확인
+		5_2) web.xml 존재하는지 확인
+		5_3) index.html 생성			
+		
+	6) 생성해놓은 서버에 애플리케이션 등록하기
+		-> 서버 우클릭 후 add and remove 선택. 올리고자 하는 애플리케이션 선택 후 finish
+	
+	7) 서버 Start 후 웹 애플리케이션 요청해서 index 페이지 잘 열리는지 확인
+		(localhost:8081/servlet)
+
+ -->
+ 
+ 	<h1>Web</h1>
+ 
+ 	<h2>* Servlet</h2>
+ 	
+ 	<p>
+ 		서블릿이란 ? <br>
+ 		웹 서비스를 위한 자바 클래스를 말하며 자바를 사용해서 웹페이지를 만들기 위해 필요한 기술이다. <br>
+ 		- 사용자의 요청을 받아 처리하고 그에 해당하는 응답페이지를 만들어 다시 사용자에게 전달하는 역할을
+ 			하는 자바의 클래스 <br>
+ 		- 즉, 웹에서동적인 페이지를 java로 구현할 수 있게 도와주는 서버측 프로그램(WAS서버에 의해 구동됨)
+ 			java클래스에서 웹 페이지 구현을 위한 HTML이 포함된 구조라고 할 수 있다(Java코드로 HTML을 구현)
+ 	</p>
+ 	
+ 	<!-- 상대경로 -->
+ 	<h3><a href="views/requestTest_GET.html">GET방식 테스트</a></h3>
+ 	
+ 	<!-- 절대경로 -->
+ 	<h3><a href="/servlet/views/requestTest_POST.html">POST방식 테스트</a></h3>
+ 
+ 
+ 
+ 
+ 
+ 
+	환영합니다
+</body>
+</html>
